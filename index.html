@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'>
+    <title>SONNET 4.6 • ∞自适应全息网站</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: #000; color: rgba(220, 240, 255, 0.9); overflow-y: scroll; scroll-snap-type: y mandatory; height: 100vh; scroll-behavior: smooth; }
+        body::after { content: ''; position: fixed; inset: 0; pointer-events: none; background: radial-gradient(circle at 30% 40%, rgba(255, 180, 255, 0.03) 0%, transparent 60%); z-index: 9999; animation: vibrateLight 8s infinite alternate; }
+        @keyframes vibrateLight { 0% { opacity: 0.4; } 100% { opacity: 0.9; } }
+        section { scroll-snap-align: start; width: 100vw; height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; backdrop-filter: blur(2px) brightness(1.2); border-bottom: 1px solid rgba(255, 255, 255, 0.02); transition: transform 0.3s; }
+        h1, h2 { font-weight: 300; letter-spacing: 0.3em; text-transform: uppercase; background: linear-gradient(135deg, #aaddff, #ffb3ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 20px cyan; }
+        .energy-button { background: rgba(10, 20, 30, 0.3); border: 1px solid rgba(255, 255, 255, 0.25); color: white; padding: 1.2rem 3rem; border-radius: 60px; cursor: pointer; transition: 0.3s; text-transform: uppercase; }
+        .energy-button:hover { transform: scale(1.1); box-shadow: 0 0 50px magenta; }
+        canvas { position: fixed; inset: 0; z-index: -1; }
+    </style>
+</head>
+<body>
+    <canvas id='bg-canvas'></canvas>
+    <section><h1>⚡ SONNET 4.6 ⚡</h1><button class='energy-button'>ignite core ▸</button></section>
+    <section><h2>NEURAL_GEN</h2><p>1M images inside 1 image</p></section>
+    <script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let w, h; function res() { w=canvas.width=innerWidth; h=canvas.height=innerHeight; } res();
+        function draw(t) {
+            ctx.fillStyle = 'rgba(0,0,0,0.1)'; ctx.fillRect(0,0,w,h);
+            ctx.strokeStyle = 'cyan'; ctx.beginPath();
+            for(let i=0; i<10; i++) { ctx.arc(w/2, h/2, Math.abs(Math.sin(t*0.001+i)*300), 0, Math.PI*2); }
+            ctx.stroke(); requestAnimationFrame(draw);
+        } draw(0);
+    </script>
+</body>
+</html>
